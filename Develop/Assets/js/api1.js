@@ -2,17 +2,12 @@
     $('#searchBtn').on('click', function(event) {
         event.preventDefault();
 
-        var searchTerm = $('search').val();
-        
-        
-        
-        console.log(searchTerm);
-
+        var searchTerm = $('#searchTerms').val();
         searchTerm = searchTerm.replace(/ /g, '+');
-        
+
         var url = "https://openlibrary.org/search.json?q=" + searchTerm;
         console.log(url);
-        /*
+        
             $.ajax({
                 url: url,
                 type: 'GET',
@@ -24,7 +19,7 @@
                 console.log("error");
                 }
             });
-        */
+
 
     });
 
