@@ -7,19 +7,20 @@
 
         var url = "https://openlibrary.org/search.json?q=" + searchTerm;
         console.log(url);
-        
-            $.ajax({
-                url: url,
-                type: 'GET',
-                dataType: 'json',
-                success: function(data) {
-                    console.log(data);
-                },
-                error: function() {
-                console.log("error");
-                }
-            });
 
+            fetch(url, {
+                method: 'GET'
+              })
+                .then(function(response) {
+                  if (response.ok) {
+                    response.json()
+                .then(function(data) {
+                      console.log(data);
+                });
+                  } else {
+                    console.log('Error: ' + response.statusText);
+                  }
+                })
 
     });
 
