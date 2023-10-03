@@ -8,6 +8,7 @@
     <link rel="stylesheet" type="text/css" href="./Assets/css/style.css">
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script src="./Assets/js/script.js"></script>
+    
 </head>
 <body>
 
@@ -27,9 +28,9 @@
                     <div>
                         <h3>Search for a book:</h3>
                     </div>
-                        <input type="text" placeholder="Enter book name" name="search">
+                        <input type="text" placeholder="Enter book name" id="searchTerms" value="">
                     <div>
-                        <button type="submit">search</button>
+                        <button type="button" id="searchBtn">search</button>
                     </div>
                 </form>
                 <!-- line separating the section called a thematic break -->
@@ -105,4 +106,5 @@
     </main>
     
 </body>
+<script src="./Assets/js/api1.js"></script>
 </html>
