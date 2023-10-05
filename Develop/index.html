@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Book Finder</title>
-
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.0.2/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" type="text/css" href="./Assets/css/style.css">
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script src="./Assets/js/script.js"></script>
@@ -13,17 +14,17 @@
 <body>
 
     <!-- top title part of the page -->
-    <header>
-        <h1>Book Finder</h1>
+    <header class="flex justify-center py-5 bg-slate-600">
+        <h1 class="text-2xl tracking-wide font-bold text-zinc-200">Book Finder</h1>
     </header>
     <!-- this is a line separating the section called a thematic break -->
     <hr>
     <main>
 
         <!-- the left side of the page where the search section and purchasable popular book results are -->
-        <div class="container">
-            <section id="leftSide">
+        <div class="container flex flex-col md:flex-row">
 
+            <section id="leftSide" class="leftSide w-full md:w-1/3 px-4 md:px-9 justify-center">
                 <form>
                     <div>
                         <h3>Search for a book:</h3>
@@ -34,38 +35,33 @@
                     </div>
                 </form>
                 <!-- line separating the section called a thematic break -->
-                        <hr>
-                        <h3>Purchase from pupular Book list</h3>
-                    <ul>
-
-                        
-                        <div class="bookleftone">
-                            <a class="bookbuttonone" href="https://openlibrary.org/works/OL257943W/A_Game_of_Thrones">
+                <hr>
+                <h3>Purchase from pupular Book list</h3>
+                <div class="bookleftone">
+                        <a class="bookbuttonone" href="https://openlibrary.org/works/OL257943W/A_Game_of_Thrones">
                                 <button type="submit">A Game of Thrones</button>
-                            </a>    
-                        </div>
-                        <div class="booklefttwo">
-                            <a class="bookbuttontwo" href="https://openlibrary.org/works/OL679358W/Coraline">
+                    </a>    
+                </div>
+                <div class="booklefttwo">
+                    <a class="bookbuttontwo" href="https://openlibrary.org/works/OL679358W/Coraline">
                                 <button type="submit">Koralina</button>
-                            </a>    
-                        </div>
-                        <div class="bookleftthree">
-                            <a class="bookbuttonthree" href="https://openlibrary.org/works/OL5727686W/The_Power_of_Now">
-                                <button type="submit">The power of now</button>
-                            </a>    
-                        </div>
-                        <div class="bookleftfour">
-                            <a class="buttonfour" href="https://openlibrary.org">
-                                <button type="submit">Place holder for a Popular Book</button>
-                            </a>    
-                        </div>
-
-                    </ul>
+                    </a>    
+                </div>
+                <div class="bookleftthree">
+                    <a class="bookbuttonthree" href="https://openlibrary.org/works/OL5727686W/The_Power_of_Now">
+                        <button type="submit">The power of now</button>
+                    </a>    
+                </div>
+                <div class="bookleftfour">
+                    <a class="buttonfour" href="https://openlibrary.org">
+                        <button type="submit">Place holder for a Popular Book</button>
+                    </a>    
+                </div>
 
             </section>
 
             <!-- This section will go on the right side of the page for the page results -->
-            <section id="rightSide">
+            <section id="rightSide" class="w-full md:w-2/3 px-4 md:px-9">
 
                 <div class="searchresults" id="searchresults">
                     <!-- replace place holder links here with book images -->
