@@ -7,7 +7,7 @@ $('#searchBtn').on('click', function(event) {
 
 
   //FOR REFACTOR, EXTRACT THIS AS ITS OWN FUNCTION
-  var url = "https://openlibrary.org/search.json?q=" + searchTerm;
+  var url = "https://openlibrary.org/search.json?title=" + searchTerm;
   console.log(url);  //TODO REMOVE CONSOLE LOG
 
       fetch(url, {
@@ -27,8 +27,7 @@ $('#searchBtn').on('click', function(event) {
             }
           })
 
-          // TODO: ADD FOR LOOP TO REPLACE IMAGE RESULTS
-          //REPLACING FIRST IMAGE BOX
+          //REPLACING FIRST IMAGE BOX WITH SEARCH RESULTS
           function createImage(coverId) {
           //var rigthSideImageone = document.getElementById("image1");
           //var coverId = data.docs[0].cover_i;
@@ -53,7 +52,7 @@ $('#searchBtn').on('click', function(event) {
           var searchResults = $("#searchresults");
           searchResults.empty();
           
-          
+          //FOORLOOP FOR SEARCH RESULTS
           $.each(books, function(index, book) { 
 
             try { //DO NOT LEARN TRY BLOCKS
@@ -62,7 +61,7 @@ $('#searchBtn').on('click', function(event) {
 
             var bookTitle = book.title;
             var bookAuthor = book.author_name[0];
-            var bookPubilishedYear = book.publish_year[0];
+            var bookPublishedYear = book.publish_year[0];
             var bookPublisher = book.publisher[0];
             var bookISBN = book.isbn[0];
             var bookCover = book.cover_i;
@@ -72,7 +71,7 @@ $('#searchBtn').on('click', function(event) {
             var bookCoverImg = $("<img>");
             var bookTitleH3 = $("h3");
             var bookAuthorP = $("<p>");
-            var bookPubilishedYearP = $("<p>");
+            var bookPublishedYearP = $("<p>");
             var bookPublisherP = $("<p>");
             var bookISBNP = $("<p>");
             var bookLanguageP = $("<p>");
@@ -80,13 +79,32 @@ $('#searchBtn').on('click', function(event) {
 
             //TODO: assign variable into elements
             bookAuthorP.text(bookAuthor);
-            bookCoverImg.attr("src", "https://covers.openlibrary.org/b/id/"+ bookCover +"-L.jpg");
+            bookTitleH3.text(bookTitle);
+            bookPublishedYearP.text(bookPublishedYear);
+            bookPublisherP.text(bookPublisher);
+            bookISBNP.text(bookISBN);
+            bookLanguageP.text(bookLanguage);
+            bookEbookP.text(bookEbook);
+
+            if (bookCover == null){
+              console.log("notworking");
+              bookCoverImg.attr("src", "https://www.press.uillinois.edu/books/images/no_cover.jpg");
+            } else {
+              bookCoverImg.attr("src", "https://covers.openlibrary.org/b/id/"+ bookCover +"-M.jpg");
+
+            }
             
 
-            //append elemts to bookdiv
+            //append elements to book div
             bookCoverImg.appendTo(bookDiv);
+            bookTitleH3.appendTo(bookDiv);
             bookAuthorP.appendTo(bookDiv);
-            //final append finished, bookdiv to searchresults
+            bookPublishedYearP.appendTo(bookDiv);
+            bookPublisherP.appendTo(bookDiv);
+            bookISBNP.appendTo(bookDiv);
+            bookLanguageP.appendTo(bookDiv);
+            bookEbookP.appendTo(bookDiv);
+            //final append finished, book div to search results
             bookDiv.appendTo(searchResults);
 
 
