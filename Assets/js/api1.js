@@ -57,7 +57,7 @@ $('#searchBtn').on('click', function(event) {
 
             try { //DO NOT LEARN TRY BLOCKS
 
-            var bookDiv = $("<div>");
+            var bookDiv = $("<div class='p-2'>");
 
             var bookTitle = book.title;
             var bookAuthor = book.author_name[0];
