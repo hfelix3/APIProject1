@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Book Finder</title>
-
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.0.2/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" type="text/css" href="./Assets/css/style.css">
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script src="./Assets/js/script.js"></script>
@@ -13,22 +14,22 @@
 <body>
 
     <!-- top title part of the page -->
-    <header>
-        <h1>Book Finder</h1>
+    <header class="flex justify-center py-5 bg-slate-600">
+        <h1 class="text-2xl tracking-wide font-bold text-zinc-200">Book Finder</h1>
     </header>
     <!-- this is a line separating the section called a thematic break -->
     <hr>
     <main>
 
         <!-- the left side of the page where the search section and purchasable popular book results are -->
-        <div class="container">
-            <section id="leftSide">
+        <div class="container flex flex-col md:flex-row">
+            <section id="leftSide" class="leftSide w-full md:w-1/3 p-4 md:p-9 flex-row justify-center">
 
                 <form>
                     <div>
                         <h3>Search for a book:</h3>
                     </div>
-                        <input type="text" placeholder="Enter book name" id="searchTerms" value="">
+                        <input type="text" placeholder="Enter book name" id="searchTerms" value="" class="bg-gray-100 border border-gray-400 text-gray-800 text-sm rounded-lg focus:ring-blue-200 focus:border-blue-200 p-1 block items-center w-full">
                     <div>
                         <button type="button" id="searchBtn">search</button>
                     </div>
@@ -65,39 +66,53 @@
             </section>
 
             <!-- This section will go on the right side of the page for the page results -->
-            <section id="rightSide">
+            <section id="rightSide" class="w-full md:w-2/3 p-4 md:p-9">
 
-                <div class="searchresults" id="searchresults">
+                <div class="searchresults flex flex-wrap" id="searchresults">
                     <!-- replace place holder links here with book images -->
                     <!-- REPLACES THIS FIRST IMAGE BOX -->
-                    <a class="rightSideImageone" href="https://openlibrary.org/works/OL2629977W/The_7_Habits_of_Highly_Effective_People">
-                        <img id="image1" src="https://ia600507.us.archive.org/view_archive.php?archive=/8/items/l_covers_0009/l_covers_0009_19.zip&file=0009195831-L.jpg" alt="Search Results">
-                    </a>
-                    <h3>book title place holder</h3>
-                    <a class="rightSideImagetwo" href="https://www.youtube.com">
-                        <img src="https://www.webfx.com/wp-content/uploads/2021/10/generic-image-placeholder.png" alt="Search Results">
-                    </a>
-                    <h3>book title place holder</h3>
-                    <a class="rightSideImagethree" href="https://www.youtube.com">
-                        <img src="https://www.webfx.com/wp-content/uploads/2021/10/generic-image-placeholder.png" alt="Search Results">
-                    </a>
-                    <h3>book title place holder</h3>
-                    <a class="rightSideImagefour" href="https://www.youtube.com">
-                        <img src="https://www.webfx.com/wp-content/uploads/2021/10/generic-image-placeholder.png" alt="Search Results">
-                    </a>
-                    <h3>book title place holder</h3>
-                    <a class="rightSideImagefive" href="https://www.youtube.com">
-                        <img src="https://www.webfx.com/wp-content/uploads/2021/10/generic-image-placeholder.png" alt="Search Results">
-                    </a>
-                    <h3>book title place holder</h3>
-                    <a class="rightSideImagesix" href="https://www.youtube.com">
-                        <img src="https://www.webfx.com/wp-content/uploads/2021/10/generic-image-placeholder.png" alt="Search Results">
-                    </a>
-                    <h3>book title place holder</h3>
-                    <a class="rightSideImage" href="https://www.youtube.com">
-                        <img src="https://www.webfx.com/wp-content/uploads/2021/10/generic-image-placeholder.png" alt="Search Results">
-                    </a>
-                    <h3>book title place holder</h3>
+                    <div class="p-2">
+                        <a class="rightSideImageone" href="https://openlibrary.org/works/OL2629977W/The_7_Habits_of_Highly_Effective_People">
+                            <img id="image1" src="https://ia600507.us.archive.org/view_archive.php?archive=/8/items/l_covers_0009/l_covers_0009_19.zip&file=0009195831-L.jpg" alt="Search Results">
+                        </a>
+                        <h3>book title place holder</h3>
+                    </div>
+                    <div class="p-2">
+                        <a class="rightSideImagetwo" href="https://www.youtube.com">
+                            <img src="https://www.webfx.com/wp-content/uploads/2021/10/generic-image-placeholder.png" alt="Search Results">
+                        </a>
+                        <h3>book title place holder</h3>
+                    </div>
+                    <div class="p-2">
+                        <a class="rightSideImagethree" href="https://www.youtube.com">
+                            <img src="https://www.webfx.com/wp-content/uploads/2021/10/generic-image-placeholder.png" alt="Search Results">
+                        </a>
+                        <h3>book title place holder</h3>
+                    </div>
+                    <div class="p-2">
+                        <a class="rightSideImagefour" href="https://www.youtube.com">
+                            <img src="https://www.webfx.com/wp-content/uploads/2021/10/generic-image-placeholder.png" alt="Search Results">
+                        </a>
+                        <h3>book title place holder</h3>
+                    </div>
+                    <div class="p-2">
+                        <a class="rightSideImagefive" href="https://www.youtube.com">
+                            <img src="https://www.webfx.com/wp-content/uploads/2021/10/generic-image-placeholder.png" alt="Search Results">
+                        </a>
+                        <h3>book title place holder</h3>
+                    </div>
+                    <div class="p-2">
+                        <a class="rightSideImagesix" href="https://www.youtube.com">
+                            <img src="https://www.webfx.com/wp-content/uploads/2021/10/generic-image-placeholder.png" alt="Search Results">
+                        </a>
+                        <h3>book title place holder</h3>
+                    </div>
+                    <div class="p-2">
+                        <a class="rightSideImage" href="https://www.youtube.com">
+                            <img src="https://www.webfx.com/wp-content/uploads/2021/10/generic-image-placeholder.png" alt="Search Results">
+                        </a>
+                        <h3>book title place holder</h3>
+                    </div>
 
                 </div>
 
