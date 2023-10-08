@@ -6,6 +6,9 @@
     <title>Book Finder</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.0.2/tailwind.min.css" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="./Assets/css/style.css">
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script src="./Assets/js/script.js"></script>
@@ -23,55 +26,58 @@
 
         <!-- the left side of the page where the search section and purchasable popular book results are -->
         <div class="container flex flex-col md:flex-row">
-            <section id="leftSide" class="leftSide w-full md:w-1/3 p-4 md:p-9 flex-row justify-center">
 
-                <form>
-                    <div>
+
+            <section id="leftSide" class="leftSide w-full md:w-1/4 p-2 md:p-3 flex-row">
+                <div>
+                <form class="pb-4">
+                    <div class="p-2">
                         <h3>Search for a book:</h3>
                     </div>
+                    <div class="pb-2">
                         <input type="text" placeholder="Enter book name" id="searchTerms" value="" class="bg-gray-100 border border-gray-400 text-gray-800 text-sm rounded-lg focus:ring-blue-200 focus:border-blue-200 p-1 block items-center w-full">
-                    <div>
-                        <button type="button" id="searchBtn">search</button>
+                    </div>
+                    <div class="flex justify-center">
+                        <button type="button" id="searchBtn" class="text-zinc-200 bg-blue-500 hover:bg-blue-800 font-medium rounded-full text-sm px-5 py-1 text-center mr-1 mb-1 flex justify-center">search</button>
                     </div>
                 </form>
+                </div>
                 <!-- line separating the section called a thematic break -->
                         <hr>
-                        <h3>Purchase from popular Book list</h3>
-                    <ul>
-
-                        <div class="bookleftone">
+                    <div class="pt-4">
+                        <h3 class="font-black underline">Purchase from popular Book list:</h3>
+                    
+                        <div class="bookleftone py-1">
                             <a class="bookbuttonone" href="https://openlibrary.org/works/OL257943W/A_Game_of_Thrones">
-                                <button type="submit">A Game of Thrones</button>
+                                <button class="hover:text-blue-500 hover:underline" type="submit">A Game of Thrones</button>
                             </a>    
                         </div>
-                        <div class="booklefttwo">
+                        <div class="booklefttwo py-1">
                             <a class="bookbuttontwo" href="https://openlibrary.org/works/OL679358W/Coraline">
-                                <button type="submit">Koralina</button>
+                                <button class="hover:text-blue-500 hover:underline" type="submit">Koralina</button>
                             </a>    
                         </div>
-                        <div class="bookleftthree">
+                        <div class="bookleftthree py-1">
                             <a class="bookbuttonthree" href="https://openlibrary.org/works/OL5727686W/The_Power_of_Now">
-                                <button type="submit">The power of now</button>
+                                <button class="hover:text-blue-500 hover:underline" type="submit">The power of now</button>
                             </a>    
                         </div>
-                        <div class="bookleftfour">
+                        <div class="bookleftfour py-1">
                             <a class="buttonfour" href="https://openlibrary.org">
-                                <button type="submit">Place holder for a Popular Book</button>
+                                <button class="hover:text-blue-500 hover:underline" type="submit">Place holder for a Popular Book</button>
                             </a>    
                         </div>
-
-                    </ul>
+                    </div>
 
             </section>
 
             <!-- This section will go on the right side of the page for the page results -->
-            <section id="rightSide" class="w-full md:w-2/3 p-4 md:p-9">
 
-                <div class="searchresults flex flex-wrap" id="searchresults">
+
+                <div class="searchresults flex flex-wrap w-full md:w-3/4 p-3 md:p-6" id="searchresults">
                     <!-- Java appends results here -->
                 </div>
 
-            </section>
         </div>
 
     </main>
