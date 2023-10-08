@@ -57,7 +57,7 @@ $('#searchBtn').on('click', function(event) {
 
             try { //DO NOT LEARN TRY BLOCKS
 
-            var bookDiv = $("<div class='p-2 w-196 h-475 overflow-hidden'>");
+            var bookDiv = $("<div class='p-2 w-48 h-99 overflow-hidden bg-slate-100 hover:bg-slate-200 flex-row border border-gray-300 rounded-lg shadow'>");
 
             var bookTitle = book.title;
             var bookAuthor = book.author_name[0];
@@ -69,7 +69,7 @@ $('#searchBtn').on('click', function(event) {
             var bookEbook = book.ebook_access;
             
             var bookCoverImg = $("<img>");
-            var bookTitleH3 = $("<h3 class='underline'>");
+            var bookTitleH3 = $("<h3 class='underline flex flex-wrap'>");
             var bookAuthorP = $("<p>");
             var bookPublishedYearP = $("<p>");
             var bookPublisherP = $("<p>");
