@@ -125,7 +125,7 @@ $('#searchBtn').on('click', function(event) {
 
 });
 
-//SEARCH WITH ENTER KEY FUNCTION
+//SEARCH WITH ENTER KEY FUNCTION.
 // Get the input field
 var input = document.getElementById("searchTerms");
 
