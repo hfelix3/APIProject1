@@ -57,7 +57,7 @@ $('#searchBtn').on('click', function(event) {
 
             try { //DO NOT LEARN TRY BLOCKS
 
-            var bookDiv = $("<div class='p-2'>");
+            var bookDiv = $("<div class='p-2 w-48 h-99 overflow-hidden bg-slate-100 hover:bg-slate-200 flex-row border border-gray-300 rounded-lg shadow'>");
 
             var bookTitle = book.title;
             var bookAuthor = book.author_name[0];
@@ -69,7 +69,7 @@ $('#searchBtn').on('click', function(event) {
             var bookEbook = book.ebook_access;
             
             var bookCoverImg = $("<img>");
-            var bookTitleH3 = $("h3");
+            var bookTitleH3 = $("<h3 class='underline flex flex-wrap'>");
             var bookAuthorP = $("<p>");
             var bookPublishedYearP = $("<p>");
             var bookPublisherP = $("<p>");
@@ -108,22 +108,8 @@ $('#searchBtn').on('click', function(event) {
             bookDiv.appendTo(searchResults);
 
 
-
-
-
-
-
-
-
-
-
-
-
-
             } catch (error) {}  // DON'T LEARN THIS
             
-
-
             // console.log(index, book.title);
             // console.log(index, book.author_name[0]);
             // console.log(index, book.publish_year[0]);
@@ -139,12 +125,17 @@ $('#searchBtn').on('click', function(event) {
 
 });
 
+//SEARCH WITH ENTER KEY FUNCTION.
+// Get the input field
+var input = document.getElementById("searchTerms");
 
-
-
-
-
-
-
-
-
+// Execute a function when the user presses a key on the keyboard
+input.addEventListener("keypress", function(event) {
+  // If the user presses the "Enter" key on the keyboard
+  if (event.key === "Enter") {
+    // Cancel the default action, if needed
+    event.preventDefault();
+    // Trigger the button element with a click
+    document.getElementById("searchBtn").click();
+  }
+});
