@@ -108,22 +108,8 @@ $('#searchBtn').on('click', function(event) {
             bookDiv.appendTo(searchResults);
 
 
-
-
-
-
-
-
-
-
-
-
-
-
             } catch (error) {}  // DON'T LEARN THIS
             
-
-
             // console.log(index, book.title);
             // console.log(index, book.author_name[0]);
             // console.log(index, book.publish_year[0]);
