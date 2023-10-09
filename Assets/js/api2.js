@@ -3,7 +3,13 @@ $(document).ready(function() {
         
     //function getSalesData(isbn) {
         var returnData = async function(isbn) {
-            var url = "https://betweengameactions.com/api.php?type=buy&isbn=" + isbn;
+            
+            
+
+            //var url = "https://betweengameactions.com/api.php?type=buy&isbn=" + isbn;
+            var key = "2cwijp5r9qfhzcf03ol6";
+            url = "https://booksrun.com/api/v3/price/buy/" + isbn + "?key=" + key; //buy
+            
             console.log(url);
             $.ajax({
                 url: url,
