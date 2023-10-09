@@ -25,17 +25,15 @@ $(document).ready(function() {
 
         console.log("shit");
         //console.log(getSalesData("9780133594140"));
+        console.log("booksrundata start");
         console.log(returnData("9780133594140"));
-    
+        console.log("booksrundata end");
     });
 
 
 
 
     function setPrices(priceObject) {
-        var used = priceObject.used;
-        var usedPrice = used.price;
-        var usedCartUrl = used.cart_url;
         var newbook = priceObject.new;
         var newPrice = newbook.price;
         var newCartUrl = newbook.cart_url;
