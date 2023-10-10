@@ -1,9 +1,10 @@
 
-$('#searchBtn').on('click', function(event) {
-  event.preventDefault();
 
+  function runSearch() {
   var searchTerm = $('#searchTerms').val();
+  localStorage.setItem("searchTerm", searchTerm);
   searchTerm = searchTerm.replace(/ /g, '+');
+  
 
 
   //FOR REFACTOR, EXTRACT THIS AS ITS OWN FUNCTION
@@ -110,7 +111,7 @@ $('#searchBtn').on('click', function(event) {
         };
         
 
-});
+};
 
 
 function setISBNs() {
@@ -181,13 +182,6 @@ var returnData = async function(isbn) {
       
 
 
-
-
-
-
-
-
-
 function setPrices(url, priceObject) {
   console.log(url);
   try {
@@ -198,3 +192,16 @@ function setPrices(url, priceObject) {
   } catch (error) {  };
 return booksrunValues;
 };
+
+
+if(localStorage.getItem("searchTerm") != undefined) {
+  $('#searchTerms').val( localStorage.getItem("searchTerm"));
+  runSearch();
+}
+
+$('#searchBtn').on('click', function(event) {
+  event.preventDefault();
+  runSearch();
+});
+
+
