@@ -43,7 +43,7 @@
             var bookTitle = "Title: " + book.title + ".";
             var bookAuthor = "Author: " + book.author_name[0] + ".";
             var bookPublishedYear = "Year published: " + book.publish_year[0] + ".";
-            var bookPublisher = "Publisher: " + book.publisher[0] + "." + "                     ISBN: ";
+            var bookPublisher = "Publisher: " + book.publisher[0] + "." + "                    ISBN: ";
             var bookISBN = book.isbn[0] + ".";
             var bookCover = book.cover_i;
             var bookLanguage = "Language: " + book.language[0] + ".";
