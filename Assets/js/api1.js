@@ -1,6 +1,6 @@
 
 
-  function runSearch() {
+function runSearch() {
   var searchTerm = $('#searchTerms').val();
   localStorage.setItem("searchTerm", searchTerm);
   searchTerm = searchTerm.replace(/ /g, '+');
@@ -41,14 +41,14 @@
 
             var bookDiv = $("<div class='p-2 w-48 h-99 overflow-hidden bg-slate-100 hover:bg-slate-200 flex-row border border-gray-300 rounded-lg shadow'>");
 
-            var bookTitle = "Title: " + book.title;
-            var bookAuthor = "Author: " + book.author_name[0];
-            var bookPublishedYear = "Year published: " + book.publish_year[0];
-            var bookPublisher = "Publisher: " + book.publisher[0];
-            var bookISBN = "ISBN: " + book.isbn[0];
+            var bookTitle = book.title;
+            var bookAuthor = book.author_name[0];
+            var bookPublishedYear = book.publish_year[0];
+            var bookPublisher = book.publisher[0];
+            var bookISBN = book.isbn[0];
             var bookCover = book.cover_i;
-            var bookLanguage = "Language: " + book.language[0];
-            var bookEbook = "E-book: " + book.ebook_access;
+            var bookLanguage = book.language[0];
+            var bookEbook = book.ebook_access;
 
             
             
@@ -66,13 +66,14 @@
 
 
             //TODO: assign variable into elements
-            bookAuthorP.text(bookAuthor);
-            bookTitleH3.text(bookTitle);
-            bookPublishedYearP.text(bookPublishedYear);
-            bookPublisherP.text(bookPublisher);
-            bookISBNP.text(bookISBN);
-            bookLanguageP.text(bookLanguage);
-            bookEbookP.text(bookEbook);
+            bookAuthorP.text("Author: " + bookAuthor + ".");
+            bookTitleH3.text("Title: " + bookTitle + ".");
+            bookPublishedYearP.text("Year published: " + bookPublishedYear + ".");
+            bookPublisherP.text("Publisher: " + bookPublisher + ".");
+            bookISBNP.text("ISBN: " +bookISBN);
+            bookLanguageP.text("Language: " + bookLanguage + ".");
+            bookEbookP.text("E-book: " + bookEbook + ".");
+            bookPrices.text("Loading store offers...");
             
 
             if (bookCover == null){
@@ -107,7 +108,7 @@
          
 
           )
-          setISBNs();
+          setISBNs(); //THIS IS WHERE API2 IS CALLED
         };
         
 
@@ -132,7 +133,7 @@ function setISBNs() {
               if(data.result.offers.booksrun.used != "none") {
                 stringbuilder = stringbuilder + "<a href='"+ data.result.offers.booksrun.used.cart_url +"'>Buy used for $" + data.result.offers.booksrun.used.price + "</a>\r\n";
               }
-              if (stringbuilder == "") { stringbuilder = "No store offers found"; }
+              if (stringbuilder == "") { stringbuilder = "No store offers found."; }
               $(isbnelements[index]).html(stringbuilder);         
             },
             error: function() {
