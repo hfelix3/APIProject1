@@ -30,7 +30,7 @@ function runSearch() {
           //FOORLOOP FOR SEARCH RESULTS
           $.each(books, async function(index, book) { 
             try {
-            var bookDiv = $("<div class='p-2 w-48 h-99 overflow-hidden bg-slate-100 hover:bg-slate-200 flex-row border border-gray-300 rounded-lg shadow'>");
+            var bookDiv = $("<div>");
             var bookTitle = book.title;
             var bookAuthor = book.author_name[0];
             var bookPublishedYear = book.publish_year[0];
@@ -40,7 +40,7 @@ function runSearch() {
             var bookLanguage = book.language[0];
             var bookEbook = book.ebook_access;
             var bookCoverImg = $("<img>");
-            var bookTitleH3 = $("<h3 class='underline flex flex-wrap'>");
+            var bookTitleH3 = $("<h3>");
             var bookAuthorP = $("<p>");
             var bookPublishedYearP = $("<p>");
             var bookPublisherP = $("<p>");
@@ -48,7 +48,10 @@ function runSearch() {
             var bookLanguageP = $("<p>");
             var bookEbookP = $("<p>");
             var bookPrices = $("<a>");
-            bookPrices.addClass("bookPrices");  //The API2 will pull the ISBNs later targeting the isbn stored in the purchase element
+            // add class for tailwind styling
+            bookPrices.addClass("bookPrices text-blue-400 hover:text-blue-600 underline"); //The API2 will pull the ISBNs later targeting the isbn stored in the purchase element
+            bookDiv.addClass("p-2 w-48 h-99 overflow-hidden bg-slate-100 hover:bg-slate-200 flex-row border border-gray-300 rounded-lg shadow");
+            bookTitleH3.addClass("underline")
             bookPrices.attr("data-isbn", bookISBN);
             bookAuthorP.text("Author: " + bookAuthor);
             bookTitleH3.text("Title: " + bookTitle);
