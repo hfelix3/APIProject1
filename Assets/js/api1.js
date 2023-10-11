@@ -19,6 +19,7 @@
               response.json()
           .then(function(data) {
                 console.log(data);
+                //TODO for each result, create a new row
                 //createImage(data);
                 createBookList(data.docs);
           });
@@ -40,14 +41,14 @@
 
             var bookDiv = $("<div class='p-2 w-48 h-99 overflow-hidden bg-slate-100 hover:bg-slate-200 flex-row border border-gray-300 rounded-lg shadow'>");
 
-            var bookTitle = "Title: " + book.title + ".";
-            var bookAuthor = "Author: " + book.author_name[0] + ".";
-            var bookPublishedYear = "Year published: " + book.publish_year[0] + ".";
-            var bookPublisher = "Publisher: " + book.publisher[0] + "." + "                    ISBN: ";
-            var bookISBN = book.isbn[0] + ".";
+            var bookTitle = "Title: " + book.title;
+            var bookAuthor = "Author: " + book.author_name[0];
+            var bookPublishedYear = "Year published: " + book.publish_year[0];
+            var bookPublisher = "Publisher: " + book.publisher[0];
+            var bookISBN = "ISBN: " + book.isbn[0];
             var bookCover = book.cover_i;
-            var bookLanguage = "Language: " + book.language[0] + ".";
-            var bookEbook = "E-book: " + book.ebook_access + ".";
+            var bookLanguage = "Language: " + book.language[0];
+            var bookEbook = "E-book: " + book.ebook_access;
 
             
             
@@ -131,7 +132,7 @@ function setISBNs() {
               if(data.result.offers.booksrun.used != "none") {
                 stringbuilder = stringbuilder + "<a href='"+ data.result.offers.booksrun.used.cart_url +"'>Buy used for $" + data.result.offers.booksrun.used.price + "</a>\r\n";
               }
-              if (stringbuilder == "") { stringbuilder = "No store offers found."; }
+              if (stringbuilder == "") { stringbuilder = "No store offers found"; }
               $(isbnelements[index]).html(stringbuilder);         
             },
             error: function() {
