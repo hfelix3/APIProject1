@@ -41,14 +41,14 @@
 
             var bookDiv = $("<div class='p-2 w-48 h-99 overflow-hidden bg-slate-100 hover:bg-slate-200 flex-row border border-gray-300 rounded-lg shadow'>");
 
-            var bookTitle = book.title;
-            var bookAuthor = book.author_name[0];
-            var bookPublishedYear = book.publish_year[0];
-            var bookPublisher = book.publisher[0];
-            var bookISBN = book.isbn[0];
+            var bookTitle = "Title: " + book.title;
+            var bookAuthor = "Author: " + book.author_name[0];
+            var bookPublishedYear = "Year published: " + book.publish_year[0];
+            var bookPublisher = "Publisher: " + book.publisher[0];
+            var bookISBN = "ISBN: " + book.isbn[0];
             var bookCover = book.cover_i;
-            var bookLanguage = book.language[0];
-            var bookEbook = book.ebook_access;
+            var bookLanguage = "Language: " + book.language[0];
+            var bookEbook = "E-book: " + book.ebook_access;
 
             
             
